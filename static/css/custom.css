@@ -84,3 +84,39 @@
   h1 {
     text-align: center;
   }
+
+  .navbar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: none;
+  }
+
+  .navbar .brand {
+    text-shadow: none;
+  }
+
+  .navbar .nav>li>a {
+    text-shadow: none;
+}
+
+.navbar .nav>.active>a, .navbar .nav>.active>a:focus, .navbar .nav>.active>a:hover {
+    background-color:darkgrey;
+}
+
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
+    border-width: 0 0 0px;
+}
+
+.intro-header .site-heading,
+.intro-header .page-heading, 
+h1 {
+  text-align: center;
+  border-width: 0 0 0px;
+}
+
+body {
+    background-color: lightgray;
+}
+
