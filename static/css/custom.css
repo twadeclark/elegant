@@ -83,6 +83,7 @@
   .intro-header .page-heading, 
   h1 {
     text-align: center;
+    font-family: var(--monoFontFamily);
   }
 
   .navbar-inner {
@@ -91,22 +92,39 @@
     left: 0;
     width: 100%;
     background: none;
+    box-sizing: border-box; /* Include padding and borders */
   }
 
   .navbar .brand {
     text-shadow: none;
   }
 
-  .navbar .nav>li>a {
+  /* color of non-selected non-hovered links */
+  .navbar .nav>li>a { 
     text-shadow: none;
+    color: #CCCCCC; /* Lighter grey color */
 }
 
-.navbar .nav>.active>a, .navbar .nav>.active>a:focus, .navbar .nav>.active>a:hover {
-    background-color:darkgrey;
+/* background of all menu */
+.navbar .nav.pull-right {
+  margin-right: 50px;
+  background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
 }
 
+/* background of the right side menu */
+.navbar .nav.pull-right:hover {
+  margin-right: 50px;
+}
+
+/* the whole bar from left to right */
 .navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner {
-    border-width: 0 0 0px;
+  border-width: 0 0 0px;
+}
+
+/* selected menu item */
+.navbar .nav>.active>a, .navbar .nav>.active>a:focus, .navbar .nav>.active>a:hover {
+  color: #FFFFFF; /* White color for readability */
+  background-color: rgba(255, 255, 255, 0.3); /* Slightly lighter background */
 }
 
 .intro-header .site-heading,
@@ -120,6 +138,20 @@ body {
     background-color: lightgray;
 }
 
-.navbar .nav.pull-right {
-    margin-right: 50px;
+.site-name {
+  position: fixed;
+  top: 20;
+  left: 20;
+}
+
+.brand .site-name {
+  font-size: 16px;
+}
+
+header.page-header h1 {
+  font-family: var(--sansFontFamily);
+}
+
+.article-content, div.recent-posts p {
+  font-family: var(--sansFontFamily);
 }
