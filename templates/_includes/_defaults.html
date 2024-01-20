@@ -219,6 +219,18 @@ PROJECTS = [{
 {% set ARCHIVES_URL = ARCHIVES_URL %}
 {% endif %}
 
+{% if not AUTHORS_URL %}
+{% set AUTHORS_URL = 'authors.html' %}
+{% else %}
+{% set AUTHORS_URL = AUTHORS_URL %}
+{% endif %}
+
+{% if not ABOUT_URL %}
+{% set ABOUT_URL = 'about.html' %}
+{% else %}
+{% set ABOUT_URL = ABOUT_URL %}
+{% endif %}
+
 {% if not SEARCH_URL %}
 {% set SEARCH_URL = 'search.html' %}
 {% else %}

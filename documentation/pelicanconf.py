@@ -57,6 +57,8 @@ PAGE_SAVE_AS = "{slug}.html"
 TAGS_URL = "tags"
 CATEGORIES_URL = "categories"
 ARCHIVES_URL = "archives"
+AUTHORS_URL = "authors"
+ABOUT_URL = "about"
 SEARCH_URL = "search"
 
 # Feeds

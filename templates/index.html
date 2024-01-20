@@ -30,6 +30,7 @@
 
 {% block content %}
 {% from '_includes/_defaults.html' import LANDING_PAGE_TITLE, PROJECTS, PROJECTS_TITLE with context %}
+{% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT, ARCHIVES_URL, CATEGORIES_URL with context %}
 
 {% set landing_page = namespace(page=false) %}
 {% for p in hidden_pages if p.slug == "landing-page-about-hidden" %}
@@ -37,63 +38,13 @@
 {% endfor %}
 
 <div class="row-fluid">
-    {% if LANDING_PAGE_TITLE %}
-    {% set css_class = 'span10 offset2' %}
-    {% if PROJECTS and LANDING_PAGE_TITLE %}
-    {% set css_class = 'span12' %}
-    {% endif %}
-    <header class="page-header {{ css_class }}">
-    <h1><a href="{{ SITEURL }}">{{ LANDING_PAGE_TITLE }}</a></h1>
+    <header class="page-header span8 offset2">
+        <h1 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">all posts</a></h1>
     </header>
-    {% endif %}
+</div>
 
-    <div class="row-fluid">
-        {% if LANDING_PAGE_TITLE and landing_page.page %}
-        {% set css_class = 'span8 offset2' %}
-        {% if PROJECTS and LANDING_PAGE_TITLE %}
-        {% set css_class = 'span8' %}
-        {% endif %}
-        <div class="{{ css_class }}">
-            <header>
-                <h1 id="about-me">{{ landing_page.page.title }}</h1>
-            </header>
-            <div class="article-content">
-                {{ landing_page.page.content }}
-            </div>
-        </div>
-        {% endif %}
-
-        {% if PROJECTS %}
-        {% set css_class = 'span8 offset2' %}
-        {% if PROJECTS and LANDING_PAGE_TITLE %}
-        {% set css_class = 'span4' %}
-        {% endif %}
-        <div class="{{ css_class }}">
-            <header>
-            <h1 id="my-projects">{{ PROJECTS_TITLE }}</h1>
-            </header>
-            {% for project in PROJECTS %}
-            <ul class="list-projects">
-                <li>
-                <a href="{{ project.url }}" title="{{ project.name }}">{{ project.name }}</a> <span class="proj-desc">{{ project.description }}</span>
-                </li>
-            </ul>
-            {% endfor %}
-        </div>
-        {% endif %}
-    </div>
-
-    {% if articles %}
-    {% set css_class = 'span8 offset2' %}
-    {% if articles and PROJECTS and LANDING_PAGE_TITLE %}
-    {% set css_class = 'span12' %}
-    {% endif %}
-    {% from '_includes/_defaults.html' import RECENT_ARTICLES_COUNT, ARCHIVES_URL, CATEGORIES_URL with context %}
-    <div class="row-fluid">
-        <div class="{{ css_class }}">
-            <header class="page-header span10 offset2">
-            <h1 id="recent-posts">Recent Posts <a id="allposts" href="{{ SITEURL }}/{{ ARCHIVES_URL }}">all posts</a></h1>
-            </header>
+<div class="row-fluid">
+    <div class="span8 offset2">
         <div class="recent-posts">
             {% for article in articles %}
             {% if loop.index0 < RECENT_ARTICLES_COUNT %}
@@ -107,7 +58,9 @@
                     {% endif %}
                 </a>
                 <div class="recent-posts-posted">
-                    posted in
+                    posted by
+                    <a href="{{ SITEURL }}/{{ AUTHORS_URL }}#{{ article.author.slug }}-ref">{{ article.author }}</a>
+                    in
                     <a href="{{ SITEURL }}/{{ CATEGORIES_URL }}#{{ article.category.slug }}-ref">{{ article.category }}</a>
                     <time itemprop="dateCreated" datetime="{{ article.date.isoformat() }}">{{ article.locale_date }}</time>
                 </div>
@@ -118,8 +71,7 @@
             {% endif %}
             {% endfor %}
         </div>
-        </div>
     </div>
-    {% endif %}
 </div>
+
 {% endblock content %}
