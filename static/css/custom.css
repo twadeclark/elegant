@@ -120,3 +120,6 @@ body {
     background-color: lightgray;
 }
 
+.navbar .nav.pull-right {
+    margin-right: 50px;
+}
