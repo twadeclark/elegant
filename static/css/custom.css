@@ -102,18 +102,20 @@
   /* color of non-selected non-hovered links */
   .navbar .nav>li>a { 
     text-shadow: none;
-    color: #CCCCCC; /* Lighter grey color */
+    color: #BBBBBB; /* Lighter grey color */
 }
+
+  /* color of non-selected hovered links */
+  .navbar .nav>li>a:hover { 
+    text-shadow: none;
+    color: #FFFFFF; /* White color for readability */
+    background-color: rgba(255, 255, 255, 0.1);
+  }
 
 /* background of all menu */
 .navbar .nav.pull-right {
   margin-right: 50px;
   background-color: rgba(0, 0, 0, 0.7); /* Black with 70% opacity */
-}
-
-/* background of the right side menu */
-.navbar .nav.pull-right:hover {
-  margin-right: 50px;
 }
 
 /* the whole bar from left to right */
