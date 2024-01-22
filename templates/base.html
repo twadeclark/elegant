@@ -62,7 +62,28 @@
         {% elif HEADER_COLOR %}
             <header class="intro-header" style="background-color: {{ HEADER_COLOR }}">
         {% else %}
-            <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/home-bg.jpg')">
+
+
+
+ 
+            {% if page_name == 'index' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/index.PNG')">
+            {% elif page_name == 'tags' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/tags.jpg')">
+            {% elif page_name == 'categories' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/categories.jpg')">
+            {% elif page_name == 'archives' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/archives.jpg')">
+            {% elif page_name == 'authors' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/authors.jpg')">
+            {% elif page_name == 'about' %} 
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/about.jpg')">
+            {% else %}
+                <header class="intro-header" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/article.PNG')">
+            {% endif %}>
+
+
+
         {% endif %}
             <div class="container">
                 <div class="row">
