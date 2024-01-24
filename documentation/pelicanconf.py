@@ -60,6 +60,7 @@ ARCHIVES_URL = "archives"
 AUTHORS_URL = "authors"
 ABOUT_URL = "about"
 SEARCH_URL = "search"
+PRIVACY_URL = "privacy"
 
 # Feeds
 AUTHOR_FEED_ATOM = None

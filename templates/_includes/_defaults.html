@@ -231,6 +231,12 @@ PROJECTS = [{
 {% set ABOUT_URL = ABOUT_URL %}
 {% endif %}
 
+{% if not PRIVACY_URL %}
+{% set PRIVACY_URL = 'privacy.html' %}
+{% else %}
+{% set PRIVACY_URL = PRIVACY_URL %}
+{% endif %}
+
 {% if not SEARCH_URL %}
 {% set SEARCH_URL = 'search.html' %}
 {% else %}
