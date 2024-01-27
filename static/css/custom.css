@@ -35,19 +35,11 @@
   .intro-header .page-heading .subheading {
     font-size: 24px;
     line-height: 1.1;
-              display: block;
-    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: block;
+    font-family: var(--monoFontFamily);
     font-weight: 300;
     margin: 10px 0 0;
-  }
-  @media only screen and (min-width: 768px) {
-    .intro-header .site-heading h1,
-    .intro-header .page-heading h1 {
-      font-size: 80px;
-    }
-  }
-  .intro-header .post-heading h1 {
-    font-size: 35px;
+    color:lightgrey
   }
   .intro-header .post-heading .subheading,
   .intro-header .post-heading .meta {
@@ -60,6 +52,23 @@
     margin: 10px 0 30px;
     font-weight: 600;
   }
+  @media only screen and (min-width: 768px) {
+    .intro-header .post-heading h1 {
+      font-size: 55px;
+    }
+    .intro-header .post-heading .subheading {
+      font-size: 30px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    .intro-header .site-heading h1,
+    .intro-header .page-heading h1 {
+      font-size: 80px;
+    }
+  }
+  .intro-header .post-heading h1 {
+    font-size: 35px;
+  }
   .intro-header .post-heading .meta {
     font-family: 'Lora', 'Times New Roman', serif;
     font-style: italic;
@@ -69,16 +78,6 @@
   .intro-header .post-heading .meta a {
     color: white;
   }
-  @media only screen and (min-width: 768px) {
-    .intro-header .post-heading h1 {
-      font-size: 55px;
-    }
-    .intro-header .post-heading .subheading {
-      font-size: 30px;
-    }
-  }
-  
-
   .intro-header .site-heading,
   .intro-header .page-heading, 
   h1 {

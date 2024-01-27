@@ -84,7 +84,24 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <div class="page-heading">
-                            <h1>{{ SITENAME }}</h1>
+                            <h1>{{ SITENAME }} </h1>
+                            {% if page_name == 'index' %} 
+                                <span class="subheading">{{ LANDING_PAGE_TITLE }}</span>
+                            {% elif page_name %}
+                                {% if RANDOM_TAG_LINES %} 
+                                    <span class="subheading"><span id="randomPhrase"></span></span>
+                                    <script>
+                                        var phrases = {{ RANDOM_TAG_LINES }};
+                                        var randomIndex = Math.floor(Math.random() * phrases.length);
+                                        var randomPhrase = phrases[randomIndex];
+                                        document.getElementById("randomPhrase").textContent = randomPhrase;
+                                    </script>
+                                {% else %}
+                                    <span class="subheading">{{ LANDING_PAGE_TITLE }}</span>
+                                {% endif %}
+                            {% else %}
+                                <span class="subheading"><small>courtesy</small> {{ article.author }} <small>on</small> {{ article.locale_date }}</span>
+                            {% endif %}
                             {% if SITESUBTITLE %}
                                 <hr class="small">
                                 <span class="subheading">{{ SITESUBTITLE }}</span>
