@@ -46,7 +46,7 @@ All tags used in the {{ SITENAME|striptags|e }} blog.
             {% for tag, articles in tags|sort %}
             <li>
             {% set num = articles|count %}
-            <a href="#{{ tag.slug }}-ref">{{ tag }}<span class="superscript">{{ num }}</span></a>
+            <a href="#{{ tag.slug }}-ref">🏷️ {{ tag }}<span class="superscript">{{ num }}</span></a>
             </li>
             {% endfor %}
         </ul>

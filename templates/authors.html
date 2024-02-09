@@ -28,7 +28,7 @@ Full archives of {{ SITENAME|striptags|e }} blog.
 {% from '_includes/_defaults.html' import AUTHORS_URL with context %}
 <div class="row-fluid">
     <header class="page-header span8 offset2">
-    <h1><a href="{{ SITEURL }}/{{ AUTHORS_URL }}">All Submitters</a></h1>
+    <h1><a href="{{ SITEURL }}/{{ AUTHORS_URL }}">All Synthonnel</a></h1>
     </header>
 </div>
 
@@ -40,7 +40,7 @@ Full archives of {{ SITENAME|striptags|e }} blog.
                 <div class="accordion-heading">
                     <a class="accordion-toggle category-title-inside-accordion collapsed" data-toggle="collapse" data-parent="#accordion2" href="#{{ author.slug }}-ref">
                         {% set num = articles|count %}
-                        {{ author }}<span class="superscript">{{ num }}</span>
+                        🤖 {{ author }}<span class="superscript">{{ num }}</span>
                     </a>
                 </div>
                 <div id="{{ author.slug }}-ref" class="accordion-body collapse">
