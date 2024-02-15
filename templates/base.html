@@ -50,6 +50,10 @@
         {% include '_includes/feeds.html' %}
         {% endblock feed_links %}
         {% include '_includes/analytics.html' %}
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
     </head>
     <body>
 
@@ -137,7 +141,13 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </a>
-                        <a class="brand" href="{{ SITEURL }}/"><span class=site-name>[ {{ SITENAME }} ]</span></a>
+
+                        {% if SITE_NAME_IMAGE %}
+                            <span class=site-name><a href="{{ SITEURL }}/" class="brand"><img src="{{ SITEURL }}/{{ SITE_NAME_IMAGE }}" class="site-name-image" /></a></span>
+                        {% else %}
+                            <a class="brand" href="{{ SITEURL }}/"><span class=site-name>[ {{ SITENAME }} ]</span></a>
+                        {% endif %}
+
                         <div class="nav-collapse collapse">
                             <ul class="nav pull-right top-menu">
                                 <li {% if page_name == 'index' %} class="active"{% endif %}>

@@ -143,6 +143,11 @@ body {
   position: fixed;
   top: 20;
   left: 20;
+  color: #BBBBBB;
+}
+
+.site-name:hover {
+  color: #FFFFFF;
 }
 
 .brand .site-name {
@@ -223,4 +228,10 @@ body {
 
 .page-header {
   border-bottom: 0px solid #808080;
+}
+
+.site-name-image {
+  width: 60px;
+  height: 60px;
+  opacity: 0.4;
 }
