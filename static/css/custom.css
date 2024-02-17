@@ -60,12 +60,12 @@
       font-size: 30px;
     }
   }
-  @media only screen and (min-width: 768px) {
+  /* @media only screen and (min-width: 768px) {
     .intro-header .site-heading h1,
     .intro-header .page-heading h1 {
       font-size: 80px;
     }
-  }
+  } */
   .intro-header .post-heading h1 {
     font-size: 35px;
   }
@@ -186,7 +186,7 @@ body {
   background-color: white; /* Sets the background to white */
   padding: 0px; /* Adds padding around the text for better readability */
   margin: 0 auto; /* Centers the content column */
-  width: 60%; /* Adjusts the width of the content column, you might need to tweak this */
+  width: 80%; /* Adjusts the width of the content column, you might need to tweak this */
   box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Optional: Adds a subtle shadow around the content column for better separation */
 }
 
@@ -235,3 +235,43 @@ body {
   height: 60px;
   opacity: 0.4;
 }
+
+@media (max-width: 767px) {
+  .navbar-fixed-bottom, 
+  .navbar-fixed-top, 
+  .navbar-static-top {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .article-content
+ {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  #content {
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  #article-sidebar {
+    margin-left: 10px;
+    margin-right: 10px;
+    width: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-header, h1, h2, h3, h4, h5, h6 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}
+
+

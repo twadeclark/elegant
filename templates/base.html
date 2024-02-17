@@ -91,7 +91,7 @@
                             <h1>{{ SITENAME }} </h1>
                             {% if page_name == 'index' %} 
                                 <span class="subheading">{{ LANDING_PAGE_TITLE }}</span>
-                            {% elif page_name %}
+                            {% else %}
                                 {% if RANDOM_TAG_LINES %} 
                                     <span class="subheading"><span id="randomPhrase"></span></span>
                                     <script>
@@ -103,8 +103,6 @@
                                 {% else %}
                                     <span class="subheading">{{ LANDING_PAGE_TITLE }}</span>
                                 {% endif %}
-                            {% else %}
-                                <span class="subheading"><small>courtesy</small> {{ article.author }} <small>on</small> {{ article.locale_date }}</span>
                             {% endif %}
                             {% if SITESUBTITLE %}
                                 <hr class="small">
