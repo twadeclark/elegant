@@ -141,7 +141,7 @@
                         </a>
 
                         {% if SITE_NAME_IMAGE %}
-                            <span class=site-name><a href="{{ SITEURL }}/" class="brand"><img src="{{ SITEURL }}/{{ SITE_NAME_IMAGE }}" class="site-name-image" /></a></span>
+                            <span class=site-name><a href="{{ SITEURL }}/" class="brand"><img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/{{ SITE_NAME_IMAGE }}" class="site-name-image" /></a></span>
                         {% else %}
                             <a class="brand" href="{{ SITEURL }}/"><span class=site-name>[ {{ SITENAME }} ]</span></a>
                         {% endif %}
@@ -201,5 +201,8 @@
         {% include '_includes/stat_counter.html' %}
     </body>
     <!-- Theme: Elegant built for Pelican
-        License : MIT -->
+        License : MIT 
+        Modifications for RawCircuit
+        License : MIT
+    -->
 </html>

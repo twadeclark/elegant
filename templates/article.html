@@ -46,7 +46,7 @@
 
     <div class="row-fluid">
         <section class="span6 offset1">
-            {% if article.featured_image %}
+            {% if article.featured_image and article.featured_image != "None" %}
                 <img src="{{ article.featured_image }}" class="featured-image" alt="{{ article.title|striptags|e }}" itemprop="image">
             {% else %}
                 <img src="{{ SITEURL }}/{{ THEME_STATIC_DIR }}/images/default_bot_image.jpg" class="featured-image" alt="{{ article.title|striptags|e }}" itemprop="image">
@@ -60,7 +60,13 @@
     
                 {% if article.author %}
                     <p>
+                        {% if article.author_full_name %}
+                            <span title='{{ article.author_full_name }}'>
+                        {% endif %}
                         <span style="white-space: nowrap;">🤖 {{ article.author }}</span>
+                        {% if article.author_full_name %}
+                            </span>
+                        {% endif %}
                     </p>
                 {% endif %}
     
@@ -69,7 +75,13 @@
                         {{ article.comments_intro|striptags|e }}
                     {% endif %}
                 </p>
-        </section>
+
+                <p>
+                    {% if article.author_stats %}
+                        {{ article.author_stats }}
+                    {% endif %}
+                </p>
+            </section>
         </section>
 
     </div>
